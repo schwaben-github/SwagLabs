@@ -74,12 +74,12 @@ namespace SwagLabsTestAutomation.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Products page loads and has items")]
-        public void ProductsPageLoadsAndHasItems()
+        [NUnit.Framework.DescriptionAttribute("Products page test")]
+        public void ProductsPageTest()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Products page loads and has items", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Products page test", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 5
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -101,6 +101,21 @@ namespace SwagLabsTestAutomation.Features
 #line hidden
 #line 9
     testRunner.And("there should be at least \'1\' product listed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 10
+    testRunner.And("the banner should contain text \'Swag Labs\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 11
+    testRunner.And("the banner should contain text \'Products\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 12
+    testRunner.And("the hamburger menu should be visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 13
+    testRunner.And("the shopping cart should be visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 14
+    testRunner.And("the sorting dropdown should be visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

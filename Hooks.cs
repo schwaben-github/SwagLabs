@@ -2,6 +2,8 @@ using TechTalk.SpecFlow;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using SwagLabsTestAutomation.Drivers;
+using System;
+using System.IO;
 
 namespace SwagLabsTestAutomation;
 
@@ -19,7 +21,21 @@ public sealed class Hooks
     public void BeforeScenario()
     {
         var options = new ChromeOptions();
-        options.AddArgument("--start-maximized");
+        // Optional: activate headless mode
+        //options.AddArgument("--headless=new");
+        options.AddArgument("--disable-credential-services");
+        options.AddArgument("--incognito");
+        options.AddArgument("--disable-features=PasswordManagerEnabled,PasswordCheck");
+        options.AddArgument("--disable-blink-features=AutomationControlled");
+        options.AddArgument("--no-default-browser-check");
+        options.AddArgument("--disable-notifications");
+        options.AddArgument("--disable-popup-blocking");
+        options.AddArgument("--disable-infobars");
+        options.AddArgument("--disable-save-password-bubble");
+        var tempProfile = Path.Combine(Path.GetTempPath(), $"chrome-profile-{Guid.NewGuid()}");
+        options.AddArgument($"--user-data-dir={tempProfile}");
+        options.AddUserProfilePreference("credentials_enable_service", false);
+        options.AddUserProfilePreference("profile.password_manager_enabled", false);
         _context.Driver = new ChromeDriver(options);
     }
 

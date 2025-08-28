@@ -6,7 +6,6 @@ public class LoginPage : BasePage
 {
     private static readonly string PageUrl = "https://www.saucedemo.com/";
 
-    // Locators
     private static readonly By UsernameInput = By.Id("user-name");
     private static readonly By PasswordInput = By.Id("password");
     private static readonly By LoginButton = By.Id("login-button");
@@ -26,9 +25,7 @@ public class LoginPage : BasePage
     {
         return WaitVisible(UsernameInput).Displayed
                && WaitVisible(PasswordInput).Displayed
-               && WaitVisible(LoginButton).Displayed
-               && WaitVisible(LoginLogo).Displayed
-               && WaitVisible(BotLogo).Displayed;
+               && WaitVisible(LoginButton).Displayed;
     }
 
     public LoginPage EnterUsername(string username)

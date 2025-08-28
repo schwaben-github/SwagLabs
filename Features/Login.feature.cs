@@ -35,8 +35,8 @@ namespace SwagLabsTestAutomation.Features
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Login", "  As a SwagLabs user\r\n  I want to login and logout, and see proper error messages" +
-                    "", ProgrammingLanguage.CSharp, featureTags);
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Login", "  As a SwagLabs user\r\n    I want to login and logout, and see proper error messag" +
+                    "es", ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -75,12 +75,12 @@ namespace SwagLabsTestAutomation.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Login page elements are visible")]
-        public void LoginPageElementsAreVisible()
+        [NUnit.Framework.DescriptionAttribute("Login page test")]
+        public void LoginPageTest()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Login page elements are visible", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Login page test", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 5
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -138,12 +138,12 @@ namespace SwagLabsTestAutomation.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Login as locked_out_user")]
-        public void LoginAsLocked_Out_User()
+        [NUnit.Framework.DescriptionAttribute("Login Attempt as locked_out_user")]
+        public void LoginAttemptAsLocked_Out_User()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Login as locked_out_user", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Login Attempt as locked_out_user", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 16
   this.ScenarioInitialize(scenarioInfo);
 #line hidden

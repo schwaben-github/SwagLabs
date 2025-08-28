@@ -121,16 +121,16 @@ This will create a `LivingDoc.html` file in your current directory.
 
 ---
 
-## PhotoGalleryTestAutomation
+## SwagLabsTestAutomation
 
 ### Automated LivingDoc Generation
 
-This project uses SpecFlow with .NET 8 and generates LivingDoc documentation for your BDD scenarios.
+This project uses SpecFlow with .NET 8 and generates LivingDoc documentation for BDD scenarios.
 
 ### How to Run Tests and Generate LivingDoc
 
 1. **Run the provided script:**
-   - Use the `run-tests-with-livingdoc.bat` script in the root directory to run your tests and automatically generate the LivingDoc HTML report.
+   - Use the `run-tests-with-livingdoc.ps1` script in the root directory to run your tests and automatically generate the LivingDoc HTML report.
    - The script will:
      - Run all tests in the `SwagLabsTestAutomation` project.
      - Generate `TestExecution.json` (required for LivingDoc).
@@ -138,7 +138,7 @@ This project uses SpecFlow with .NET 8 and generates LivingDoc documentation for
 
    **Usage:**
    ```cmd
-   run-tests-with-livingdoc.bat
+   run-tests-with-livingdoc.ps1
    ```
 
 2. **View the documentation:**
