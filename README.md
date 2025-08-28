@@ -156,6 +156,5 @@ This project uses SpecFlow with .NET 8 and generates LivingDoc documentation for
 - The LivingDoc will not be generated automatically by `dotnet test` alone. Always use the provided script for full automation.
 - If you add or change features, simply re-run the script to update the documentation.
 
----
-
-Feel free to contribute or open issues for improvements!
+## Contributing
+Feel free to fork the repository and submit pull requests. For major changes, please open an issue first to discuss what you would like to change.
