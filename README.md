@@ -4,7 +4,7 @@
 
 ---
 
-### SwagLabsTestAutomation
+## SwagLabsTestAutomation
 
 This repository contains UI automation tests for the Swag Labs site using SpecFlow, Selenium WebDriver, and NUnit on .NET 8.
 
@@ -120,8 +120,6 @@ This will create a `LivingDoc.html` file in your current directory.
 - For more options, see the [SpecFlow LivingDoc documentation](https://docs.specflow.org/projects/livingdoc/en/latest/).
 
 ---
-
-## SwagLabsTestAutomation
 
 ### Automated LivingDoc Generation
 
