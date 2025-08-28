@@ -1,16 +1,2 @@
-namespace SwagLabsTestAutomation
-{
-    public class Tests
-    {
-        [SetUp]
-        public void Setup()
-        {
-        }
-
-        [Test]
-        public void Test1()
-        {
-            Assert.Pass();
-        }
-    }
-}
+// This placeholder file was replaced by structured tests under Tests/.
+// Keeping the file empty to avoid build errors if it was still referenced.
