@@ -19,8 +19,7 @@ public sealed class Hooks
     public void BeforeScenario()
     {
         var options = new ChromeOptions();
-        options.AddArgument("--headless=new");
-        options.AddArgument("--window-size=1920,1080");
+        options.AddArgument("--start-maximized");
         _context.Driver = new ChromeDriver(options);
     }
 

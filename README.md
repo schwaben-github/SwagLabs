@@ -1,29 +1,31 @@
-﻿# Testing Baasic Demo Site with SpecFlow and Selenium WebDriver
+﻿# Testing Swag Labs site with SpecFlow and Selenium WebDriver
 
 ![C#](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=csharp&logoColor=white)  ![Visual Studio](https://img.shields.io/badge/Visual%20Studio-5C2D91.svg?style=for-the-badge&logo=visual-studio&logoColor=white)  ![Selenium](https://img.shields.io/badge/-selenium-%43B02A?style=for-the-badge&logo=selenium&logoColor=white)  ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
 
 ---
 
-### SpecFlowPhotoGallery.Specs
+### SwagLabsTestAutomation
 
-This repository contains UI automation tests for the Baasic Demo Site using SpecFlow, Selenium WebDriver, and NUnit on .NET 8.
+This repository contains UI automation tests for the Swag Labs site using SpecFlow, Selenium WebDriver, and NUnit on .NET 8.
 
 ### Project Structure
 
 ```
-SpecFlowPhotoGallery.Specs/
+SwagLabsTestAutomation/
 ├── Drivers/
 │   └── WebDriverContext.cs         # WebDriver setup and teardown
 ├── Features/
-│   └── Register.feature           # Gherkin feature file(s)
+│   └── Login.feature               # Gherkin feature file(s)
+│   └── Products.feature            # Gherkin feature file(s)
 ├── Pages/
-│   ├── HomePage.cs                # Page Object for Home page
-│   └── RegisterPage.cs            # Page Object for Register page
+│   ├── BasePage.cs                # Page Object for foundational methods
+│   └── LoginPage.cs               # Page Object for Login page
+│   └── Products Page.cs           # Page Object for Products page
 ├── StepDefinitions/
-│   ├── RegisterActionSteps.cs     # Step definitions for actions
-│   └── RegisterAssertionSteps.cs  # Step definitions for assertions
+│   ├── LoginSteps.cs              # Step definitions for Login feature
+│   └── ProductsSteps.cs           # Step definitions for products feature
 ├── Hooks.cs                       # SpecFlow hooks for scenario setup/teardown
-├── SpecFlowPhotoGallery.Specs.csproj
+├── SwagLabsTestAutomation.csproj
 └── ...
 ```
 
@@ -66,7 +68,7 @@ This will launch Chrome, maximize the window, and execute the SpecFlow scenarios
 - The tests use SpecFlow with NUnit and Selenium WebDriver.
 - The browser window is maximized automatically at the start of the scenario.
 - All WebDriver setup and disposal is handled in `WebDriverContext` and `Hooks.cs`.
-- Feature files are located in the `Features/` directory and step definitions in `StepDefinitions/`.
+- Feature files are located in the `Features/` directory and step definitions in `Steps/`.
 - Page Objects are in the `Pages/` directory.
 
 
@@ -102,7 +104,7 @@ dotnet tool update --global SpecFlow.Plus.LivingDoc.CLI
 3. **Generate the HTML report:**
 
 ```sh
-livingdoc test-assembly bin\Debug\net8.0\SpecFlowPhotoGallery.Specs.dll -t bin\Debug\net8.0\TestExecution.json -o LivingDoc.html
+livingdoc test-assembly bin\Debug\net8.0\SwagLabsTestAutomation.dll -t bin\Debug\net8.0\TestExecution.json -o LivingDoc.html
 ```
 
 This will create a `LivingDoc.html` file in your current directory.
@@ -130,9 +132,9 @@ This project uses SpecFlow with .NET 8 and generates LivingDoc documentation for
 1. **Run the provided script:**
    - Use the `run-tests-with-livingdoc.bat` script in the root directory to run your tests and automatically generate the LivingDoc HTML report.
    - The script will:
-     - Run all tests in the `SpecFlowPhotoGallery.Specs` project.
+     - Run all tests in the `SwagLabsTestAutomation` project.
      - Generate `TestExecution.json` (required for LivingDoc).
-     - Create/update `LivingDoc.html` in the `SpecFlowPhotoGallery.Specs` directory.
+     - Create/update `LivingDoc.html` in the `SwagLabsTestAutomation` directory.
 
    **Usage:**
    ```cmd
@@ -140,7 +142,7 @@ This project uses SpecFlow with .NET 8 and generates LivingDoc documentation for
    ```
 
 2. **View the documentation:**
-   - Open `SpecFlowPhotoGallery.Specs\LivingDoc.html` in your browser to see the latest LivingDoc report.
+   - Open `SwagLabsTestAutomation\LivingDoc.html` in your browser to see the latest LivingDoc report.
 
 ### Requirements
 - .NET 8 SDK
