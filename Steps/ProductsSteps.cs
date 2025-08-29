@@ -1,7 +1,5 @@
-using TechTalk.SpecFlow;
 using SwagLabsTestAutomation.Pages;
-using SwagLabsTestAutomation.Drivers;
-using NUnit.Framework;
+using TechTalk.SpecFlow;
 
 namespace SwagLabsTestAutomation.Steps;
 

@@ -1,6 +1,4 @@
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
-using System;
 
 namespace SwagLabsTestAutomation.Pages;
 
@@ -24,7 +22,6 @@ public class ProductsPage : BasePage
     {
         try
         {
-            // Try common selectors for Chrome popups (adjust as needed)
             var closeBtn = Driver.FindElement(By.CssSelector("button[aria-label='Close'], .close, .modal-close"));
             if (closeBtn.Displayed)
             {

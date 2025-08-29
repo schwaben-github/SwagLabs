@@ -1,9 +1,5 @@
-using TechTalk.SpecFlow;
-using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using SwagLabsTestAutomation.Drivers;
-using System;
-using System.IO;
+using TechTalk.SpecFlow;
 
 namespace SwagLabsTestAutomation;
 
