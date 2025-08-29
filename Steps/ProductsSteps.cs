@@ -8,6 +8,7 @@ public class ProductsSteps
 {
     private readonly WebDriverContext _context;
     private ProductsPage? _productsPage;
+    private LoginPage? _loginPage;
 
     public ProductsSteps(WebDriverContext context)
     {
@@ -66,5 +67,41 @@ public class ProductsSteps
     public void TheSortingDropdownShouldBeVisible()
     {
         Assert.That(_productsPage!.IsSortingDropdownVisible(), Is.True, "Sorting dropdown is not visible");
+    }
+
+    [When("I add the first product to the shopping cart")]
+    public void IAddTheFirstProductToTheShoppingCart()
+    {
+        _productsPage!.AddFirstProductToCart();
+    }
+
+    [Then("the shopping cart icon should display a red dot with '1'")]
+    public void TheShoppingCartIconShouldDisplayARedDotWith1()
+    {
+        Assert.That(_productsPage!.IsCartBadgeWithCount(1), Is.True, "Cart badge does not show '1'");
+    }
+
+    [When("I remove the first product from the shopping cart")]
+    public void IRemoveTheFirstProductFromTheShoppingCart()
+    {
+        _productsPage!.RemoveFirstProductFromCart();
+    }
+
+    [Then("the shopping cart icon should not display a red dot")]
+    public void TheShoppingCartIconShouldNotDisplayARedDot()
+    {
+        Assert.That(_productsPage!.IsCartBadgeVisible(), Is.False, "Cart badge is still visible");
+    }
+
+    [When("I log out")]
+    public void ILogOut()
+    {
+        _loginPage = _productsPage!.Logout();
+    }
+
+    [Then("I should be redirected to the login page")]
+    public void IShouldBeRedirectedToTheLoginPage()
+    {
+        Assert.That(_loginPage!.IsLoaded(), Is.True, "Not redirected to login page");
     }
 }

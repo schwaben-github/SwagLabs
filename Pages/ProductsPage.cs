@@ -15,6 +15,9 @@ public class ProductsPage : BasePage
     public static readonly By AllItemsLink = By.Id("inventory_sidebar_link");
     public static readonly By AboutLink = By.Id("about_sidebar_link");
     public static readonly By ResetAppStateLink = By.Id("reset_sidebar_link");
+    private static readonly By AddToCartButton = By.CssSelector(".inventory_item:first-child button.btn_inventory");
+    private static readonly By RemoveFromCartButton = By.CssSelector(".inventory_item:first-child button.btn_inventory.btn_secondary");
+    private static readonly By ShoppingCartBadge = By.CssSelector(".shopping_cart_badge");
 
     public ProductsPage(IWebDriver driver) : base(driver) { }
 
@@ -110,5 +113,47 @@ public class ProductsPage : BasePage
         EnsureMenuOpen();
         WaitClickable(LogoutLink).Click();
         return new LoginPage(Driver);
+    }
+
+    public void AddFirstProductToCart()
+    {
+        WaitClickable(AddToCartButton).Click();
+    }
+
+    public void RemoveFirstProductFromCart()
+    {
+        WaitClickable(RemoveFromCartButton).Click();
+    }
+
+    public bool IsCartBadgeWithCount(int count)
+    {
+        try
+        {
+            var badge = WaitVisible(ShoppingCartBadge);
+            return badge.Text == count.ToString();
+        }
+        catch (NoSuchElementException)
+        {
+            return false;
+        }
+    }
+
+    public bool IsCartBadgeVisible()
+    {
+        try
+        {
+            // Wait up to 3 seconds for the badge to disappear
+            var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(Driver, TimeSpan.FromSeconds(3));
+            return wait.Until(d =>
+            {
+                var badges = d.FindElements(ShoppingCartBadge);
+                return badges.Count > 0 && badges[0].Displayed;
+            });
+        }
+        catch (WebDriverTimeoutException)
+        {
+            // Badge is not visible (gone)
+            return false;
+        }
     }
 }

@@ -2,7 +2,7 @@ Feature: Login
   As a SwagLabs user
     I want to login and logout, and see proper error messages
 
-  Scenario: Login page test
+  Scenario: Login page elements test
     Given I am on the login page
     Then the login page elements should be visible
 

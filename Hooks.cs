@@ -17,8 +17,8 @@ public sealed class Hooks
     public void BeforeScenario()
     {
         var options = new ChromeOptions();
-        // Optional: activate headless mode
-        //options.AddArgument("--headless=new");
+        // Optional: deactivate headless mode
+        options.AddArgument("--headless=new");
         options.AddArgument("--disable-credential-services");
         options.AddArgument("--incognito");
         options.AddArgument("--disable-features=PasswordManagerEnabled,PasswordCheck");
