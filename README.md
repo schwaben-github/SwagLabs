@@ -1,5 +1,23 @@
 ﻿# Testing Swag Labs site with SpecFlow and Selenium WebDriver
 
+## Table of Contents
+- [SwagLabsTestAutomation](#swaglabstestautomation)
+  - [Project Structure](#project-structure)
+  - [Prerequisites](#prerequisites)
+  - [How to Run the Tests](#how-to-run-the-tests)
+  - [Using Visual Studio Test Explorer](#or-simply-use-the-visual-studio-test-explorer-and-hotkeys)
+  - [Notes](#notes)
+  - [Troubleshooting](#troubleshooting)
+- [SpecFlow LivingDoc HTML Report](#specflow-livingdoc-html-report)
+  - [How to Generate the LivingDoc HTML Report](#how-to-generate-the-livingdoc-html-report)
+  - [What is LivingDoc?](#what-is-livingdoc)
+  - [Notes](#notes-1)
+- [Automated LivingDoc Generation](#automated-livingdoc-generation)
+  - [How to Run Tests and Generate LivingDoc](#how-to-run-tests-and-generate-livingdoc)
+  - [Requirements](#requirements)
+  - [Notes](#notes-2)
+- [Contributing](#contributing)
+
 ![C#](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=csharp&logoColor=white)  ![Visual Studio](https://img.shields.io/badge/Visual%20Studio-5C2D91.svg?style=for-the-badge&logo=visual-studio&logoColor=white)  ![Selenium](https://img.shields.io/badge/-selenium-%43B02A?style=for-the-badge&logo=selenium&logoColor=white)  ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
 
 ---
